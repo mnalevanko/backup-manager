@@ -17,8 +17,8 @@ class BaseCriteria:
 
 class ExtensionFilter(BaseCriteria):
     def __init__(self, files, dir, allowed_extensions):
+        self.allowed_extensions = allowed_extensions
         super().__init__(self, files, dir)
-        self.allowed_extesions = allowed_extensions
 
     def filter(self, files, dir):
         results = []
