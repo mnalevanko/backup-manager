@@ -25,5 +25,4 @@ def Backup(from_path, to_path):
             raise ValueError("Directory not found: " + path2)
     except ValueError as e:
         print(e)
-
     shutil.copy(from_path, to_path)
