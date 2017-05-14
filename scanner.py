@@ -8,4 +8,16 @@ def Scan(dir):
     :param dir: path to the directory to scan
     :return: 
     """
-    pass
+    filelist = []
+    for folderName, subfolders, filenames in walk(dir):
+#         print('The current folder is ' + folderName)
+        for subfolder in subfolders:
+            pass
+#             print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+        for filename in filenames:
+            filelist.append((filename, folderName))
+    return filelist
+
+#test Scan
+for data in Scan(dir):
+    print(data)
