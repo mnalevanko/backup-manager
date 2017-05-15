@@ -21,4 +21,15 @@ def Scan(directory):
 ### LET'S TALK ABOUT HOW TO DO TESTS NEXT TIME :)
 #test Scan
 for data in Scan(directory):
+    for folderName, subfolders, filenames in walk(dir):
+#         print('The current folder is ' + folderName)
+        for subfolder in subfolders:
+            pass
+#             print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+        for filename in filenames:
+            filelist.append((filename, folderName))
+    return filelist
+
+#test Scan
+for data in Scan(dir):
     print(data)
