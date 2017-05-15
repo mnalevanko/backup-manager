@@ -2,10 +2,23 @@
 
 from os import walk
 
-def Scan(dir):
+### DON'T USE dir as a variable/argument name, or you'll override the builtin function dir() in the local namespace !!
+
+def Scan(directory):
     """
     Given the path to a directory, it will return an iterable containing tuples (filename, subpath)
     :param dir: path to the directory to scan
     :return: 
     """
-    pass
+    filelist = []
+    for folderName, subfolders, filenames in walk(directory):
+        #print('The current folder is ' + folderName)
+        for filename in filenames:
+            filelist.append((filename, folderName))
+    ### This could also be made into a generator, let's maybe talk about it next lesson?
+    return filelist
+
+### LET'S TALK ABOUT HOW TO DO TESTS NEXT TIME :)
+#test Scan
+for data in Scan(directory):
+    print(data)
