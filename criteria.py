@@ -8,7 +8,7 @@ class BaseCriteria:
         Give a list of (filename, subpath) and the main dir's path,
         filters the results into self.results
         :param files: list of (filename, subpath)
-        :param dir: the main dir'a path
+        :param dir: the main dir's path
         """
         self.results = self.filter(self, files, dir)
 
