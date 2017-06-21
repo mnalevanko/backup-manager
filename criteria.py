@@ -3,24 +3,23 @@
 from os import path
 
 class BaseCriteria:
-    def __init__(self, files, dir):
+    def __init__(self, files):
         """
-        Give a list of (filename, subpath) and the main dir's path,
+        Give a list of (filename, subpath)
         filters the results into self.results
         :param files: list of (filename, subpath)
-        :param dir: the main dir'a path
         """
-        self.results = self.filter(self, files, dir)
+        self.results = self.filter(files)
 
     def __call__(self):
         return self.results
 
 class ExtensionFilter(BaseCriteria):
-    def __init__(self, files, dir, allowed_extensions):
+    def __init__(self, files, allowed_extensions):
         self.allowed_extensions = allowed_extensions
-        super().__init__(self, files, dir)
+        super().__init__(files)
 
-    def filter(self, files, dir):
+    def filter(self, files):
         results = []
         for file, subpath in files:
             if path.splitext(file)[1] in self.allowed_extensions:

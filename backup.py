@@ -22,7 +22,7 @@ def Backup(from_path, to_path):
         if not p.isfile(from_path):
             raise ValueError(from_path + " does not seem to point to a file.")
         if not p.isdir(to_path):
-            raise ValueError("Directory not found: " + path2)
+            raise ValueError("Directory not found: " + to_path)
+        shutil.copy(from_path, to_path)
     except ValueError as e:
         print(e)
-    shutil.copy(from_path, to_path)
