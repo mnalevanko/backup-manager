@@ -18,6 +18,7 @@ def Scan(directory):
     ### This could also be made into a generator, let's maybe talk about it next lesson?
     return filelist
 
+
 # ### LET'S TALK ABOUT HOW TO DO TESTS NEXT TIME :)
 # #test Scan
 # for data in Scan(directory):
